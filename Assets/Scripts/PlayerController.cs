@@ -31,9 +31,6 @@ public class PlayerController : MonoBehaviour
 
         Debug.Log(body.linearVelocity);
 
-       
-
-
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 

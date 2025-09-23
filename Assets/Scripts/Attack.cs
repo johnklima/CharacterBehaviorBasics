@@ -1,14 +1,15 @@
+using System.IO.Pipes;
 using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
 
-    public PlayerController controller;
-
+    public Controller controller;
+    public string tagText = "NPC";
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "NPC")
+        if(other.tag == tagText)
         {
             controller.Attack();
         }

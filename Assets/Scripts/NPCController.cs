@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Navigation : MonoBehaviour
+public class NPCController : Controller
 {
 
     public Transform target;
@@ -9,7 +9,7 @@ public class Navigation : MonoBehaviour
     private NavMeshAgent agent;
     private Animator animator;
 
-    private float attackTime = 0;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,22 +33,18 @@ public class Navigation : MonoBehaviour
             agent.isStopped = true;
             animator.SetFloat("velocity", 0);
 
-            //decide what the npc should do
-            if(attackTime < 5.0f)
-            {
-                animator.SetTrigger("attack");
-                attackTime += Time.deltaTime ;
-            }
-            
-            
-
         }
         else
         {
             agent.isStopped = false;
             animator.SetFloat("velocity", agent.speed);
-            
 
+        }
+
+        if (isAttacking && attackTime < 5.0f)
+        {
+            animator.SetTrigger("attack");
+            attackTime += Time.deltaTime;
         }
 
     }

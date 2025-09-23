@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 7947558}
   - component: {fileID: 7947557}
   m_Layer: 0
-  m_Name: TriggerSoundEmmiter
+  m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -310,7 +310,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   controller: {fileID: 1051973530}
-  tagText: NPC
 --- !u!65 &65561303
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1261,7 +1260,6 @@ GameObject:
   - component: {fileID: 1164125731}
   - component: {fileID: 1164125730}
   - component: {fileID: 1164125729}
-  - component: {fileID: 1164125733}
   m_Layer: 0
   m_Name: AttackVolume
   m_TagString: NPC
@@ -1326,12 +1324,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.0480957, y: 1.24491, z: 2.1025848}
-  m_Center: {x: -0.08387375, y: 0.122455, z: 0.22442845}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1164125731
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1388,20 +1386,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164125727}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1164125733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1164125727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c768130c68f2244b5b89899c39a82e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Attack
-  controller: {fileID: 1684881153}
-  tagText: Player
 --- !u!1 &1684881151 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 487a66aca2b5f764089ae0d3c8d8b6c7, type: 3}

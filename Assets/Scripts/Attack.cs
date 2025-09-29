@@ -3,12 +3,12 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
 
-    public PlayerController controller;
-
+    public Controller controller;
+    public string enemyTag;
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "NPC")
+        if(other.tag == enemyTag)
         {
             controller.Attack();
         }

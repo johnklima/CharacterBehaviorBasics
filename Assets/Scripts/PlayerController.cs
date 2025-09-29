@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Controller
 {
    
     public float horizontalInput = 1.0f;
@@ -13,10 +13,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 4.0f;
 
     private Rigidbody body;
-    private Animator animator;
-
-    private bool isAttacking = false;
-    private float attackTime = 0;
+   
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -49,18 +46,8 @@ public class PlayerController : MonoBehaviour
         float speed = (verticalInput * Time.deltaTime + horizontalInput * Time.deltaTime) / 2;
         animator.SetFloat("velocity", speed * 10.0f);
 
-
-        if(isAttacking && attackTime < 5.0f)
-        {
-            animator.SetTrigger("attack");
-            attackTime += Time.deltaTime;
-        }
+        UpdateAttack();
     }
 
-    public void Attack()
-    {
-        Debug.Log("ATTACK");
-        isAttacking = true;
-        attackTime = 0;
-    }
+
 }

@@ -1,13 +1,13 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Navigation : MonoBehaviour
+public class NPCControlller : Controller
 {
 
     public Transform target;
 
     private NavMeshAgent agent;
-    private Animator animator;
+   
 
     private float attackTime = 0;
 
@@ -31,15 +31,7 @@ public class Navigation : MonoBehaviour
         if (agent.remainingDistance < 2.0f)
         {
             agent.isStopped = true;
-            animator.SetFloat("velocity", 0);
-
-            //decide what the npc should do
-            if(attackTime < 5.0f)
-            {
-                animator.SetTrigger("attack");
-                attackTime += Time.deltaTime ;
-            }
-            
+            animator.SetFloat("velocity", 0);          
             
 
         }
@@ -50,6 +42,9 @@ public class Navigation : MonoBehaviour
             
 
         }
+
+
+        UpdateAttack();
 
     }
 }

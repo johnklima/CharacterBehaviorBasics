@@ -20,6 +20,7 @@ public class PlayerController : Controller
     {
         body = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        Debug.Log(Application.unityVersion);
     }
 
     // Update is called once per frame
